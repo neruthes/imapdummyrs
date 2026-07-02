@@ -25,5 +25,11 @@ case "$1" in
 		cargo build --release --target "$t"
 		done
 		;;
+
+	release | release/ )
+		cp target/x86_64-unknown-linux-musl/release/imapdummyrs release/imapdummyrs-linux-musl-amd64
+		cp target/aarch64-apple-darwin/release/imapdummyrs release/imapdummyrs-darwin-arm64
+		realpath release
+		;;
 esac
 
